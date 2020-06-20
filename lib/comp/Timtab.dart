@@ -16,7 +16,7 @@ class _TimtabState extends State<Timtab> {
   Future<List> update() async {
     List total = [];
     try {
-      var resp = await http.get("http://192.168.43.220/classapp/time.php");
+      var resp = await http.get("http://192.168.43.11/classapp/time.php");
       var temp = jsonDecode(resp.body);
       if (temp['error'] != 'false') {
         List lis = temp['0'];
@@ -43,7 +43,7 @@ class _TimtabState extends State<Timtab> {
                 flex: 7,
                 child: Center(
                   child: Text(
-                    "Day",
+                    "DAY",
                     style: TextStyle(color: Colors.red),
                     textScaleFactor:
                         MediaQuery.of(context).textScaleFactor * 1.5,
@@ -153,7 +153,7 @@ class _TimtabState extends State<Timtab> {
               children: <Widget>[
                 head(),
                 Container(
-                  height: Responsive.responsiveHeight(context, 600),
+                  height: Responsive.responsiveHeight(context, 550),
                   child: ListView.builder(
                     itemCount: snapshot.data.length,
                     itemBuilder: (BuildContext context, int index) {

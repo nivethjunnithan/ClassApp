@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
+import 'package:http/http.dart' as http;
 import '../responsive.dart';
 
 class Seri extends StatefulWidget {
@@ -16,7 +16,7 @@ class _SeriState extends State<Seri> {
   Future<List> update() async {
     List total = [];
     try {
-      var resp = await http.get("http://192.168.43.220/classapp/attenc.php");
+      var resp = await http.get("http://192.168.43.11/classapp/series.php");
       var temp = jsonDecode(resp.body);
       if (temp['error'] != 'false') {
         List lis = temp['0'];
@@ -43,7 +43,7 @@ class _SeriState extends State<Seri> {
                             flex: 7,
                             child: Center(
                               child: Text(
-                                "R: No",
+                                "ROLL NO",
                                 style: TextStyle(color: Colors.red),
                                 textScaleFactor:
                                     MediaQuery.of(context).textScaleFactor *
@@ -155,7 +155,7 @@ class _SeriState extends State<Seri> {
               children: <Widget>[
                 head(),
                 Container(
-                  height: Responsive.responsiveHeight(context, 600),
+                  height: Responsive.responsiveHeight(context, 550),
                   child: ListView.builder(
                     itemCount: snapshot.data.length,
                     itemBuilder: (BuildContext context, int index) {
