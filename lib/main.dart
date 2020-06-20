@@ -3,6 +3,7 @@ import 'package:classapp/comp/Timtab.dart';
 import 'package:flutter/material.dart';
 import 'comp/Atten.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             Atten(),
             Timtab(),
            Center(
-             child: Text("Will be added in next update",
+             child: Text("എടാ മെച്ചു പെവർ ആണോ ",
              style: TextStyle(color: Colors.red,fontSize: 20),),
            ),
           ],
